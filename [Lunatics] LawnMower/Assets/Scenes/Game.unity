@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518803379076d9840a8d5789648e7ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 0}
+  joystick: {fileID: 1825900278847255377}
 --- !u!4 &1690369901
 Transform:
   m_ObjectHideFlags: 0
