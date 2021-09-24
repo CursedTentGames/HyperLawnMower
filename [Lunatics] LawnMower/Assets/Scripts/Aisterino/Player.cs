@@ -9,26 +9,26 @@ public class Player : MonoBehaviour // Singleton
     private float gold = 0;
     private float gems = 0;
 
-    private List<Robot> RobotsInventory = new List<Robot>();
-    private Robot currentRobot;
-    public Robot CurrentRobot { get { return currentRobot; } }
+    private List<Mower> MowerInventory = new List<Mower>();
+    private Mower currentMower;
+    public Mower CurrentMower { get { return currentMower; } }
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void BuyRobot(Robot robot)
+    public void BuyMower(Mower mower)
     {
-        switch(robot.PriceType)
+        switch(mower.PriceType)
         {
             case (PriceTypes.Free):
-                RobotsInventory.Add(robot);
+                MowerInventory.Add(mower);
                 break;
             case (PriceTypes.Gold):
-                if(robot.Price <= gold)
+                if(mower.Price <= gold)
                 {
-                    RobotsInventory.Add(robot);
+                    MowerInventory.Add(mower);
                 }
                 else
                 {
@@ -36,9 +36,9 @@ public class Player : MonoBehaviour // Singleton
                 }
                 break;
             case (PriceTypes.Gems):
-                if (robot.Price <= gems)
+                if (mower.Price <= gems)
                 {
-                    RobotsInventory.Add(robot);
+                    MowerInventory.Add(mower);
                 }
                 else
                 {
@@ -47,23 +47,23 @@ public class Player : MonoBehaviour // Singleton
                 break;
         }
 
-        currentRobot = robot; // For testing only
+        currentMower = mower; // For testing only
 
         #region Testing Players Inventory
         /*
-        if (RobotsInventory.Count > 0)//For testing only
+        if (MowerInventory.Count > 0)//For testing only
         {
             Debug.Log("-------------------------");
-            Debug.Log("List of robots in Players inventory");
-            foreach (Robot robotInInv in RobotsInventory)
+            Debug.Log("List of mower in Players inventory");
+            foreach (Mower mowerInInv in MowerInventory)
             {
-                Debug.Log(robotInInv.name);
+                Debug.Log(mowerInInv.name);
             }
             Debug.Log("-------------------------");
         }
         else
         {
-            Debug.Log("List of Robots in Inventory is empty");
+            Debug.Log("List of mowers in Inventory is empty");
         }
         */
         #endregion

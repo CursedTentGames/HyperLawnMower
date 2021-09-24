@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Robot
+public class Mower
 {
     public string name;
     public float rotationSpeed;
@@ -16,7 +16,7 @@ public class Robot
     public PriceTypes PriceType { get { return priceType; } }
     #endregion  
 
-    public Robot(string name, float rotationSpeed, float moveSpeed, float price, PriceTypes priceType)
+    public Mower(string name, float rotationSpeed, float moveSpeed, float price, PriceTypes priceType)
     {
         this.name = name;
         this.rotationSpeed = rotationSpeed;
